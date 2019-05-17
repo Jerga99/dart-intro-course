@@ -4,6 +4,7 @@ import '../test.dart';
 class Person {
   String _name;
   int _age;
+  int _ageInDays;
   double _height;
   bool _employeeStatus;
 
@@ -12,7 +13,7 @@ class Person {
   	_age = age,
   	_height = height,
   	_employeeStatus = employeeStatus {
-      print('Calling default constructor from $this');
+      _transformAgeToDays();
    }
 
   Person.named({
@@ -25,11 +26,31 @@ class Person {
     _age = age;
     _height = height;
     _employeeStatus = employeeStatus;
-    print('Calling named constructor from $this');
+    _transformAgeToDays();
+  }
+
+  String getName() {
+    return _name;
+  }
+
+  double getHeight() {
+    return _height;
+  }
+
+  int getAge() {
+    return _age;
+  }
+
+  bool getEmployeeStatus() {
+    return _employeeStatus;
+  }
+
+  int _transformAgeToDays() {
+    return _ageInDays = _age * 365;
   }
 
   int getAgeInDays() {
-  	return _age * 365;
+  	return _ageInDays;
 	}
 
 
