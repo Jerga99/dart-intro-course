@@ -7,12 +7,14 @@ class Person {
   int _ageInDays;
   double _height;
   bool _employeeStatus;
+  List<String> _allergies;
 
-  Person(String name,int age, double height, bool employeeStatus) :
+  Person(String name,int age, double height, bool employeeStatus, List<String> allergies) :
    	_name = name,
   	_age = age,
   	_height = height,
-  	_employeeStatus = employeeStatus {
+  	_employeeStatus = employeeStatus,
+    _allergies = allergies {
       _transformAgeToDays();
    }
 
@@ -20,12 +22,14 @@ class Person {
     String name,
     int age,
   	double height,
-  	bool employeeStatus
+  	bool employeeStatus,
+    List<String> allergies
   }) {
   	_name = name;
     _age = age;
     _height = height;
     _employeeStatus = employeeStatus;
+    _allergies = allergies;
     _transformAgeToDays();
   }
 
@@ -40,6 +44,9 @@ class Person {
   int get age {
     return _age;
   }
+
+  List<String> get allergies => _allergies;
+  set allergies(value) => _allergies = value;
 
   set name(String value) {
     print(value);
@@ -87,7 +94,7 @@ class Person {
 //     print(height);
 //     print(employeeStatus);
 
-    print('$_name, $_age, $_height, $_employeeStatus');
+    print('$_name, $_age, $_height, $_employeeStatus, $_allergies');
 
     return 'I have been returned!';
   }
