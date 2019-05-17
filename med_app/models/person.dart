@@ -2,15 +2,16 @@
 import '../test.dart';
 
 class Person {
-  String name;
-  int age;
-  double height;
-  bool employeeStatus;
+  String _name;
+  int _age;
+  double _height;
+  bool _employeeStatus;
 
-  Person(String name,int age, double height, bool employeeStatus) : 		 	this.name = name,
-  	this.age = age,
-  	this.height = height,
-  	this.employeeStatus = employeeStatus {
+  Person(String name,int age, double height, bool employeeStatus) :
+   	_name = name,
+  	_age = age,
+  	_height = height,
+  	_employeeStatus = employeeStatus {
       print('Calling default constructor from $this');
    }
 
@@ -20,15 +21,15 @@ class Person {
   	double height,
   	bool employeeStatus
   }) {
-  	this.name = name;
-    this.age = age;
-    this.height = height;
-    this.employeeStatus = employeeStatus;
+  	_name = name;
+    _age = age;
+    _height = height;
+    _employeeStatus = employeeStatus;
     print('Calling named constructor from $this');
   }
 
   int getAgeInDays() {
-  	return age * 365;
+  	return _age * 365;
 	}
 
 
@@ -38,7 +39,7 @@ class Person {
 //     print(height);
 //     print(employeeStatus);
 
-    print('$name, $age, $height, $employeeStatus');
+    print('$_name, $_age, $_height, $_employeeStatus');
 
     return 'I have been returned!';
   }
