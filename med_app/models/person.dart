@@ -29,21 +29,48 @@ class Person {
     _transformAgeToDays();
   }
 
-  String getName() {
-    return _name;
+  String get name => _name;
+
+  double get height => _height;
+
+  bool get employeeStatus {
+    return _employeeStatus;
   }
 
-  double getHeight() {
-    return _height;
-  }
-
-  int getAge() {
+  int get age {
     return _age;
   }
 
-  bool getEmployeeStatus() {
-    return _employeeStatus;
+  set name(String value) {
+    print(value);
+    _name = value;
   }
+
+  set age(int value) => _age = value;
+
+  set height(double value) {
+    _height = value;
+  }
+
+  set employeeStatus(bool value) {
+    _employeeStatus = value;
+  }
+
+  // String getName() {
+  //   return _name;
+  // }
+
+  // double getHeight() {
+  //   return _height;
+  // }
+
+  // int getAge() {
+  //   return _age;
+  // }
+
+  // bool getEmployeeStatus() {
+  //   return _employeeStatus;
+  // }
 
   int _transformAgeToDays() {
     return _ageInDays = _age * 365;
