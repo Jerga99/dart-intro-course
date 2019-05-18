@@ -1,0 +1,11 @@
+
+1. Create class "Repository" in separate file
+2. In "Repository" create instance variable "patients" of type Map
+3. Create function to add person to "Repository" patients
+NOTE: to generate unique key use function:
+ var key = '${DateTime.now().millisecondsSinceEpoch}';
+4. Create function or getter to get all of the patients from "Repository"
+5. in main.dart create instance of "Repository" and add our 2 persons
+   to "Repository" patients
+6. Get patients from "Repository", iterate them and display patient info
+7. Good Luck and Have fun

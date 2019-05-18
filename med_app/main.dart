@@ -1,6 +1,6 @@
 
 
-import './car.dart';
+import 'repository.dart';
 import './models/person.dart';
 
 void main() {
@@ -15,47 +15,13 @@ void main() {
                    employeeStatus:  false,
                    allergies: person2Allergies);
 
-  Map<String, Person> patients = {
-    '1': person1,
-    '2': person2
-  };
+  Repository repository = Repository();
+  repository.addPerson(person1);
+  repository.addPerson(person2);
+  repository.addPerson(Person('Tom Hill', 34, 197.5, true, person1Allergies));
 
-  var patientList = patients.values.toList();
-  for(var i = 0; i < patients.length; i++) {
-    var patient = patientList[i];
-    patient.displayUserInfo();
-  }
-
-  // for(var i = 1; i < patients.length + 1 ; i++) {
-  //   print(patients[i.toString()]);
-  // }
-
-  // patients.forEach((key, patient) {
-  //   print('Key of $key');
-  //   patient.displayUserInfo();
-  // });
-
-  // for(var i = 0; i < person1.allergies.length; i++) {
-  //   print(person1.allergies[i]);
-  // }
-
-  // person1.allergies.forEach((String allergy) {
-  //   print(allergy);
-  // });
-
-  // var j = 0;
-  // while(j < 5) {
-  //   print('Print from While $j');
-  //   j++;
-  // }
-
-  // var k = 0;
-  // do {
-  //   print('Print from do while $k');
-  //   k++;
-  // } while (k < 5);
-
-
+  final patients = repository.patients;
+  patients.forEach((key, patient) => patient.displayUserInfo());
 }
 
 
