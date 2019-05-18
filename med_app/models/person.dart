@@ -63,22 +63,6 @@ class Person {
     _employeeStatus = value;
   }
 
-  // String getName() {
-  //   return _name;
-  // }
-
-  // double getHeight() {
-  //   return _height;
-  // }
-
-  // int getAge() {
-  //   return _age;
-  // }
-
-  // bool getEmployeeStatus() {
-  //   return _employeeStatus;
-  // }
-
   int _transformAgeToDays() {
     return _ageInDays = _age * 365;
   }
@@ -86,6 +70,18 @@ class Person {
   int getAgeInDays() {
   	return _ageInDays;
 	}
+
+  void addAlergy(String alergy) {
+    _allergies.add(alergy);
+  }
+
+  void addAlergies(List<String> allergies) {
+    _allergies.addAll(allergies);
+  }
+
+  bool removeAlergy(String alergy) {
+    return _allergies.remove(alergy);
+  }
 
 
   String displayUserInfo() {
