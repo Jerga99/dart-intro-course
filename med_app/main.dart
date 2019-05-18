@@ -16,9 +16,9 @@ void main() {
                    allergies: person2Allergies);
 
   Repository repository = Repository();
-  repository.addPerson(person1);
-  repository.addPerson(person2);
-  repository.addPerson(Person('Tom Hill', 34, 197.5, true, person1Allergies));
+  repository..addPerson(person1)
+            ..addPerson(person2)
+            ..addPerson(Person('Tom Hill', 34, 197.5, true, person1Allergies));
 
   final patients = repository.patients;
   patients.forEach((key, patient) => patient.displayUserInfo());
