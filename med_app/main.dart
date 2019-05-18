@@ -20,20 +20,9 @@ void main() {
     '2': person2
   };
 
-  if (person1.age == 1200 || person1.employeeStatus) {
-    print('I am called from if statement');
+  for(var i = 0; i < person1.allergies.length; i++) {
+    print(person1.allergies[i]);
   }
-  else if(person1.name == 'Filip Jergadasdasdkjdbkj') {
-    print('I am called from else if statement');
-  }
-  else {
-    print('I am called from else statement');
-  }
-
-  // for(var i = 0; i < 5; i++) {
-  //   print('Print from interation');
-  //   print('Number of iteration - $i');
-  // }
 
   // var j = 0;
   // while(j < 5) {
