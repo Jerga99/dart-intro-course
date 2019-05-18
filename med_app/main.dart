@@ -25,6 +25,23 @@ void main() {
     '2': person2
   };
 
+  patients.addAll({'5': Person('Sam Well', 35, 167.5, false, []), '10': Person('Peter Green', 37, 177.5, false, []) });
+  patients.addEntries([MapEntry('100', Person('Tom Young', 24, 187.5, true, []))]);
+
+  patients.remove('1');
+  patients.remove('2');
+
+  // patients.removeWhere((key, person) {
+  //   if (person.age == 35) {
+  //     return true;
+  //   }
+
+  //   return false;
+  // });
+
+  patients.removeWhere((key, person) => person.name == 'Sam Well');
+
+
   print(patients.keys);
   print(patients.values);
 
