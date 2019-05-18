@@ -20,9 +20,28 @@ void main() {
     '2': person2
   };
 
-  for(var i = 0; i < person1.allergies.length; i++) {
-    print(person1.allergies[i]);
+  var patientList = patients.values.toList();
+  for(var i = 0; i < patients.length; i++) {
+    var patient = patientList[i];
+    patient.displayUserInfo();
   }
+
+  // for(var i = 1; i < patients.length + 1 ; i++) {
+  //   print(patients[i.toString()]);
+  // }
+
+  // patients.forEach((key, patient) {
+  //   print('Key of $key');
+  //   patient.displayUserInfo();
+  // });
+
+  // for(var i = 0; i < person1.allergies.length; i++) {
+  //   print(person1.allergies[i]);
+  // }
+
+  // person1.allergies.forEach((String allergy) {
+  //   print(allergy);
+  // });
 
   // var j = 0;
   // while(j < 5) {
