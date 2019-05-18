@@ -15,45 +15,29 @@ void main() {
                    employeeStatus:  false,
                    allergies: person2Allergies);
 
-  // person1.addAlergy('dogs');
-  // person1.addAlergies(['cats', 'horses']);
-  // person1.removeAlergy('peanuts');
-  // person1.removeAlergy('wheat');
-
   Map<String, Person> patients = {
     '1': person1,
     '2': person2
   };
 
-  patients.addAll({'5': Person('Sam Well', 35, 167.5, false, []), '10': Person('Peter Green', 37, 177.5, false, []) });
-  patients.addEntries([MapEntry('100', Person('Tom Young', 24, 187.5, true, []))]);
+  for(var i = 0; i < 5; i++) {
+    print('Print from interation');
+    print('Number of iteration - $i');
+  }
 
-  patients.remove('1');
-  patients.remove('2');
+  var j = 0;
+  while(j < 5) {
+    print('Print from While $j');
+    j++;
+  }
 
-  // patients.removeWhere((key, person) {
-  //   if (person.age == 35) {
-  //     return true;
-  //   }
-
-  //   return false;
-  // });
-
-  patients.removeWhere((key, person) => person.name == 'Sam Well');
-
-
-  print(patients.keys);
-  print(patients.values);
+  var k = 0;
+  do {
+    print('Print from do while $k');
+    k++;
+  } while (k < 5);
 
 
-
-
-  person1.displayUserInfo();
-
-  // person1.displayUserInfo();
-  // person2.displayUserInfo();
-
-  // print(person1.getAgeInDays());
 }
 
 
