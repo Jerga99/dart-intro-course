@@ -20,22 +20,36 @@ void main() {
     '2': person2
   };
 
-  for(var i = 0; i < 5; i++) {
-    print('Print from interation');
-    print('Number of iteration - $i');
+  // true && true => true
+  // false && true => false
+  // true && false => false
+
+  // true || true => true
+  // true || false => true
+
+
+  if (person1.age == 1200 || person1.height == 188.5) {
+    print('I am called from if statement');
+  } else {
+    print('I am called from else statement');
   }
 
-  var j = 0;
-  while(j < 5) {
-    print('Print from While $j');
-    j++;
-  }
+  // for(var i = 0; i < 5; i++) {
+  //   print('Print from interation');
+  //   print('Number of iteration - $i');
+  // }
 
-  var k = 0;
-  do {
-    print('Print from do while $k');
-    k++;
-  } while (k < 5);
+  // var j = 0;
+  // while(j < 5) {
+  //   print('Print from While $j');
+  //   j++;
+  // }
+
+  // var k = 0;
+  // do {
+  //   print('Print from do while $k');
+  //   k++;
+  // } while (k < 5);
 
 
 }
