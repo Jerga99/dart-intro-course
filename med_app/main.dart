@@ -15,10 +15,21 @@ void main() {
                    employeeStatus:  false,
                    allergies: person2Allergies);
 
-  person1.addAlergy('dogs');
-  person1.addAlergies(['cats', 'horses']);
-  person1.removeAlergy('peanuts');
-  person1.removeAlergy('wheat');
+  // person1.addAlergy('dogs');
+  // person1.addAlergies(['cats', 'horses']);
+  // person1.removeAlergy('peanuts');
+  // person1.removeAlergy('wheat');
+
+  Map<String, Person> patients = {
+    '1': person1,
+    '2': person2
+  };
+
+  print(patients.keys);
+  print(patients.values);
+
+
+
 
   person1.displayUserInfo();
 
