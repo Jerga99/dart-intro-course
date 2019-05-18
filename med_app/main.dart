@@ -7,7 +7,7 @@ void main() {
   List<String> person1Allergies = ['peanuts', 'wheat', 'apples'];
   List<String> person2Allergies = ['dust', 'oranges', 'cats'];
 
-  Person person1 = Person('Filip Jerga', 28, 187.5, true, person1Allergies);
+  Person person1 = Person('Filip Jerga', 28, 187.5, false, person1Allergies);
   Person person2
     = Person.named(name: 'John Smith',
                    age: 35,
@@ -20,17 +20,13 @@ void main() {
     '2': person2
   };
 
-  // true && true => true
-  // false && true => false
-  // true && false => false
-
-  // true || true => true
-  // true || false => true
-
-
-  if (person1.age == 1200 || person1.height == 188.5) {
+  if (person1.age == 1200 || person1.employeeStatus) {
     print('I am called from if statement');
-  } else {
+  }
+  else if(person1.name == 'Filip Jergadasdasdkjdbkj') {
+    print('I am called from else if statement');
+  }
+  else {
     print('I am called from else statement');
   }
 
