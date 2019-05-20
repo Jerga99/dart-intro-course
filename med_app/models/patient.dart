@@ -1,7 +1,7 @@
-import 'person.dart';
+import 'hospital_person.dart';
 
 
-class Patient extends Person {
+class Patient extends HospitalPerson {
   List<String> _allergies;
 
   Patient(String name,
