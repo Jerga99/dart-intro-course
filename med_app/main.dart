@@ -3,6 +3,7 @@
 import 'repository.dart';
 import './models/hospital_person.dart';
 import './models/patient.dart';
+import './models/doctor.dart';
 
 void main() {
   List<String> person1Allergies = ['peanuts', 'wheat', 'apples'];
@@ -15,14 +16,27 @@ void main() {
                    height: 177.8,
                    employeeStatus:  false,
                    allergies: person2Allergies);
+  Doctor doctor = Doctor.named(name: 'Dr. Jake',
+                               age: 44,
+                               height: 187.0,
+                               employeeStatus: true,
+                               sector: 'cardiology');
+  doctor..addPatient(person1)
+        ..addPatient(person2);
+
 
   Repository repository = Repository();
   repository..addPerson(person1)
             ..addPerson(person2)
-            ..addPerson(HospitalPerson('Tom Hill', 34, 197.5, true));
+            ..addPerson(HospitalPerson('Tom Hill', 34, 197.5, true))
+            ..addPerson(doctor);
 
-  final patients = repository.patients;
-  patients.forEach((key, patient) => patient.displayUserInfo());
+  print('-----SHOWING PATIENTS------');
+  doctor.showPatients();
+
+  final persons = repository.items;
+  print('-----SHOWING REPOSITORY------');
+  persons.forEach((key, person) => person.displayUserInfo());
 }
 
 
