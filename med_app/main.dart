@@ -2,14 +2,15 @@
 
 import 'repository.dart';
 import './models/person.dart';
+import './models/patient.dart';
 
 void main() {
   List<String> person1Allergies = ['peanuts', 'wheat', 'apples'];
   List<String> person2Allergies = ['dust', 'oranges', 'cats'];
 
-  Person person1 = Person('Filip Jerga', 28, 187.5, false, person1Allergies);
-  Person person2
-    = Person.named(name: 'John Smith',
+  Patient person1 = Patient('Filip Jerga', 28, 187.5, false, person1Allergies);
+  Patient person2
+    = Patient.named(name: 'John Smith',
                    age: 35,
                    height: 177.8,
                    employeeStatus:  false,
