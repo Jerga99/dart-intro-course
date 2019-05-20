@@ -17,11 +17,10 @@ void main() {
                    employeeStatus:  false,
                    allergies: person2Allergies);
 
-  debugger();
   Repository repository = Repository();
   repository..addPerson(person1)
             ..addPerson(person2)
-            ..addPerson(Patient('Tom Hill', 34, 197.5, true, person1Allergies));
+            ..addPerson(Person('Tom Hill', 34, 197.5, true));
 
   final patients = repository.patients;
   patients.forEach((key, patient) => patient.displayUserInfo());

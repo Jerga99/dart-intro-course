@@ -39,4 +39,11 @@ class Patient extends Person {
   bool removeAlergy(String alergy) {
     return _allergies.remove(alergy);
   }
+
+  @override
+  String displayUserInfo() {
+    print('$name, $age, $height, $employeeStatus $allergies');
+
+    return 'I have been returned!';
+  }
 }
