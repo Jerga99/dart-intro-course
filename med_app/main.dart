@@ -25,7 +25,6 @@ void main() {
   doctor..addPatient(person1)
         ..addPatient(person2);
 
-
   Repository<Person> repository = Repository<Person>();
 
   repository..addItem(person1)
@@ -33,17 +32,31 @@ void main() {
             ..addItem(HospitalPerson('Tom Hill', 34, 197.5, true))
             ..addItem(doctor);
 
-  print('-----SHOWING PATIENTS------');
-  doctor.showPatients();
+  String Function(String) displayENWelcomeMessage = (String name) {
+    print('Welcome $name');
+    return '';
+  };
 
-  final persons = repository.items;
-  print('-----SHOWING REPOSITORY------');
-  persons.forEach((key, person) => person.displayUserInfo());
+  String Function(String) displaySKWelcomeMessage = (String name) {
+    print('Vitaj $name');
+    return '';
+  };
+
+  greetPerson('Filip', displayENWelcomeMessage);
+  greetPerson('Filip', displaySKWelcomeMessage);
+
+  // print('-----SHOWING PATIENTS------');
+  // doctor.showPatients();
+
+  // final persons = repository.items;
+  // print('-----SHOWING REPOSITORY------');
+  // persons.forEach((key, person) => person.displayUserInfo());
 }
 
 
-
-
+void greetPerson(String name, Function displayMessage) {
+  displayMessage(name);
+}
 
 
 
