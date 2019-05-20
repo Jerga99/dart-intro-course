@@ -3,6 +3,7 @@
 import 'repository.dart';
 import './models/person.dart';
 import './models/patient.dart';
+import 'dart:developer';
 
 void main() {
   List<String> person1Allergies = ['peanuts', 'wheat', 'apples'];
@@ -16,6 +17,7 @@ void main() {
                    employeeStatus:  false,
                    allergies: person2Allergies);
 
+  debugger();
   Repository repository = Repository();
   repository..addPerson(person1)
             ..addPerson(person2)

@@ -65,12 +65,7 @@ class Person {
 	}
 
   String displayUserInfo() {
-//     print(name);
-//     print(age);
-//     print(height);
-//     print(employeeStatus);
-
-    print('$_name, $_age, $_height, $_employeeStatus, $_allergies');
+    print('$_name, $_age, $_height, $_employeeStatus');
 
     return 'I have been returned!';
   }
