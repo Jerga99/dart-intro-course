@@ -19,7 +19,7 @@ void main() {
   Repository repository = Repository();
   repository..addPerson(person1)
             ..addPerson(person2)
-            ..addPerson(Person('Tom Hill', 34, 197.5, true, person1Allergies));
+            ..addPerson(Patient('Tom Hill', 34, 197.5, true, person1Allergies));
 
   final patients = repository.patients;
   patients.forEach((key, patient) => patient.displayUserInfo());

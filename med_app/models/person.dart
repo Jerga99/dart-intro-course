@@ -7,14 +7,12 @@ class Person {
   int _ageInDays;
   double _height;
   bool _employeeStatus;
-  List<String> _allergies;
 
-  Person(String name,int age, double height, bool employeeStatus, List<String> allergies) :
+  Person(String name,int age, double height, bool employeeStatus) :
    	_name = name,
   	_age = age,
   	_height = height,
-  	_employeeStatus = employeeStatus,
-    _allergies = allergies {
+  	_employeeStatus = employeeStatus{
       _transformAgeToDays();
    }
 
@@ -22,14 +20,12 @@ class Person {
     String name,
     int age,
   	double height,
-  	bool employeeStatus,
-    List<String> allergies
+  	bool employeeStatus
   }) {
   	_name = name;
     _age = age;
     _height = height;
     _employeeStatus = employeeStatus;
-    _allergies = allergies;
     _transformAgeToDays();
   }
 
@@ -44,9 +40,6 @@ class Person {
   int get age {
     return _age;
   }
-
-  List<String> get allergies => _allergies;
-  set allergies(value) => _allergies = value;
 
   set name(String value) {
     print(value);
@@ -70,19 +63,6 @@ class Person {
   int getAgeInDays() {
   	return _ageInDays;
 	}
-
-  void addAlergy(String alergy) {
-    _allergies.add(alergy);
-  }
-
-  void addAlergies(List<String> allergies) {
-    _allergies.addAll(allergies);
-  }
-
-  bool removeAlergy(String alergy) {
-    return _allergies.remove(alergy);
-  }
-
 
   String displayUserInfo() {
 //     print(name);
