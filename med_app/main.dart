@@ -4,6 +4,7 @@ import 'repository.dart';
 import './models/hospital_person.dart';
 import './models/patient.dart';
 import './models/doctor.dart';
+import './models/person.dart';
 
 void main() {
   List<String> person1Allergies = ['peanuts', 'wheat', 'apples'];
@@ -25,11 +26,12 @@ void main() {
         ..addPatient(person2);
 
 
-  Repository repository = Repository();
-  repository..addPerson(person1)
-            ..addPerson(person2)
-            ..addPerson(HospitalPerson('Tom Hill', 34, 197.5, true))
-            ..addPerson(doctor);
+  Repository<Person> repository = Repository<Person>();
+
+  repository..addItem(person1)
+            ..addItem(person2)
+            ..addItem(HospitalPerson('Tom Hill', 34, 197.5, true))
+            ..addItem(doctor);
 
   print('-----SHOWING PATIENTS------');
   doctor.showPatients();

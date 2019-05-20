@@ -1,15 +1,15 @@
 import 'dart:math';
 import 'models/person.dart';
 
-class Repository {
-  Map<String, Person> _items = {};
+class Repository<T> {
+  Map<String, T> _items = {};
 
-  Person addPerson(Person person) {
+  T addItem(T item) {
     Random r = Random();
     final key = '${r.nextInt(DateTime.now().second)}';
-    _items[key] = person;
+    _items[key] = item;
     return _items[key];
   }
 
-  Map<String, Person> get items => _items;
+  Map<String, T> get items => _items;
 }
