@@ -5,6 +5,7 @@ import './models/hospital_person.dart';
 import './models/patient.dart';
 import './models/doctor.dart';
 import './models/person.dart';
+import 'lib/iterators.dart';
 
 void main() {
   List<String> person1Allergies = ['peanuts', 'wheat', 'apples'];
@@ -32,31 +33,20 @@ void main() {
             ..addItem(HospitalPerson('Tom Hill', 34, 197.5, true))
             ..addItem(doctor);
 
-  String Function(String) displayENWelcomeMessage = (String name) {
-    print('Welcome $name');
-    return '';
-  };
-
-  String Function(String) displaySKWelcomeMessage = (String name) {
-    print('Vitaj $name');
-    return '';
-  };
-
-  greetPerson('Filip', displayENWelcomeMessage);
-  greetPerson('Filip', displaySKWelcomeMessage);
 
   // print('-----SHOWING PATIENTS------');
   // doctor.showPatients();
 
-  // final persons = repository.items;
+  final persons = repository.items;
   // print('-----SHOWING REPOSITORY------');
   // persons.forEach((key, person) => person.displayUserInfo());
-}
 
 
-void greetPerson(String name, Function displayMessage) {
-  displayMessage(name);
+  customForEach(persons, (key, person) {
+     person.displayUserInfo();
+  });
 }
+
 
 
 
