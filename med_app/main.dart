@@ -6,43 +6,38 @@ import './models/person.dart';
 import 'dart:io';
 
 void main() async {
+  print(Patient.numberOfPatientInstances);
+  final repository = initRepository();
+  print(Patient.numberOfPatientInstances);
 
-  print('Starting App');
-  var data = await fetchSomeData();
-  print(data);
+  Patient.getNumberOfInstance();
 
-  print('1');
-  print('2');
-  print('End of application');
+  bool appIsRunning = true;
+  displayWelcomeText();
+  while(appIsRunning) {
+    print('Write an option:');
+    final input = stdin.readLineSync().toLowerCase();
 
-  // final repository = initRepository();
-
-  // bool appIsRunning = true;
-  // displayWelcomeText();
-  // while(appIsRunning) {
-  //   print('Write an option:');
-  //   final input = stdin.readLineSync().toLowerCase();
-
-  //   switch(input) {
-  //     case '1':
-  //       displayDBUsers(repository);
-  //       break;
-  //     case 'help':
-  //       displayAvailableOptions();
-  //       break;
-  //     case 'quit':
-  //       appIsRunning = false;
-  //       break;
-  //     case 'exit':
-  //       appIsRunning = false;
-  //       break;
-  //     default:
-  //       print('No supported option!');
-  //   }
-  // }
+    switch(input) {
+      case '1':
+        displayDBUsers(repository);
+        break;
+      case 'help':
+        displayAvailableOptions();
+        break;
+      case 'quit':
+        appIsRunning = false;
+        break;
+      case 'exit':
+        appIsRunning = false;
+        break;
+      default:
+        print('No supported option!');
+    }
+  }
 }
 
-Future fetchSomeData() {
+Future<String> fetchSomeData() {
   return Future.delayed(Duration(milliseconds: 3000), (){
     print('3 Seconds Later!');
     return 'Future resolved!';

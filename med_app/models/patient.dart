@@ -3,6 +3,11 @@ import 'hospital_person.dart';
 
 class Patient extends HospitalPerson {
   List<String> _allergies;
+  static int numberOfPatientInstances = 0;
+
+  static getNumberOfInstance() {
+    return numberOfPatientInstances;
+  }
 
   Patient(String name,
           int age,
@@ -10,7 +15,10 @@ class Patient extends HospitalPerson {
           bool employeeStatus,
           List<String> allergies)
     : _allergies = allergies,
-      super(name, age, height, employeeStatus);
+      super(name, age, height, employeeStatus)
+  {
+    numberOfPatientInstances++;
+  }
 
   Patient.named({
     String name,
@@ -23,7 +31,10 @@ class Patient extends HospitalPerson {
     super.named(name: name,
                 age: age,
                 height: height,
-                employeeStatus: employeeStatus);
+                employeeStatus: employeeStatus)
+  {
+    numberOfPatientInstances++;
+  }
 
   List<String> get allergies => _allergies;
   set allergies(value) => _allergies = value;
