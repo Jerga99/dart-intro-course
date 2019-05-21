@@ -8,9 +8,26 @@ import 'dart:io';
 void main() {
   final repository = initRepository();
 
-  print('Please provide something to console:');
-  final input = stdin.readLineSync();
-  print(input);
+  bool appIsRunning = true;
+
+  while(appIsRunning) {
+    print('Please provide something to console:');
+    final input = stdin.readLineSync();
+
+    switch(input) {
+      case '1':
+        print('print here patients');
+        break;
+      case 'quit':
+        appIsRunning = false;
+        break;
+      case 'exit':
+        appIsRunning = false;
+        break;
+      default:
+        print('No supported option!');
+    }
+  }
 
 }
 
