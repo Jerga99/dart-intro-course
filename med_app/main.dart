@@ -1,13 +1,22 @@
-
-
 import 'repository.dart';
 import './models/hospital_person.dart';
 import './models/patient.dart';
 import './models/doctor.dart';
 import './models/person.dart';
-import 'lib/iterators.dart';
+import 'dart:io';
 
 void main() {
+  final repository = initRepository();
+
+  print('Please provide something to console:');
+  final input = stdin.readLineSync();
+  print(input);
+
+}
+
+
+
+Repository initRepository() {
   List<String> person1Allergies = ['peanuts', 'wheat', 'apples'];
   List<String> person2Allergies = ['dust', 'oranges', 'cats'];
 
@@ -33,18 +42,7 @@ void main() {
             ..addItem(HospitalPerson('Tom Hill', 34, 197.5, true))
             ..addItem(doctor);
 
-
-  // print('-----SHOWING PATIENTS------');
-  // doctor.showPatients();
-
-  final persons = repository.items;
-  // print('-----SHOWING REPOSITORY------');
-  // persons.forEach((key, person) => person.displayUserInfo());
-
-
-  customForEach(persons, (key, person) {
-     person.displayUserInfo();
-  });
+  return repository;
 }
 
 
