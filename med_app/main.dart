@@ -9,14 +9,17 @@ void main() {
   final repository = initRepository();
 
   bool appIsRunning = true;
-
+  displayWelcomeText();
   while(appIsRunning) {
-    print('Please provide something to console:');
-    final input = stdin.readLineSync();
+    print('Write an option:');
+    final input = stdin.readLineSync().toLowerCase();
 
     switch(input) {
       case '1':
-        print('print here patients');
+        displayDBUsers(repository);
+        break;
+      case 'help':
+        displayAvailableOptions();
         break;
       case 'quit':
         appIsRunning = false;
@@ -28,12 +31,29 @@ void main() {
         print('No supported option!');
     }
   }
+}
 
+void displayDBUsers(Repository r) {
+  final persons = r.items;
+  persons.forEach((k, p) => p.displayUserInfo());
+}
+
+void displayWelcomeText() {
+  print('Hello, Welcome in Hospital DB APP');
+  print('---------------------------------');
+  displayAvailableOptions();
+}
+
+void displayAvailableOptions() {
+  print('Please choose following options:');
+  print('1 - List all of the persons in Hospital');
+  print('Help - Display available options');
+  print('Type Exit or Quit to exit application');
 }
 
 
 
-Repository initRepository() {
+Repository<Person> initRepository() {
   List<String> person1Allergies = ['peanuts', 'wheat', 'apples'];
   List<String> person2Allergies = ['dust', 'oranges', 'cats'];
 
