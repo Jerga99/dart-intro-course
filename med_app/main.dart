@@ -6,31 +6,46 @@ import './models/person.dart';
 import 'dart:io';
 
 void main() {
-  final repository = initRepository();
 
-  bool appIsRunning = true;
-  displayWelcomeText();
-  while(appIsRunning) {
-    print('Write an option:');
-    final input = stdin.readLineSync().toLowerCase();
+  print('Starting App');
+  var someFuture = Future.delayed(Duration(milliseconds: 3000), (){
+    print('3 Seconds Later!');
+    return 'Future resolved!';
+  });
 
-    switch(input) {
-      case '1':
-        displayDBUsers(repository);
-        break;
-      case 'help':
-        displayAvailableOptions();
-        break;
-      case 'quit':
-        appIsRunning = false;
-        break;
-      case 'exit':
-        appIsRunning = false;
-        break;
-      default:
-        print('No supported option!');
-    }
-  }
+  someFuture.then((data) {
+    print(data);
+    print('1');
+    print('2');
+    print('End of application');
+  });
+
+
+  // final repository = initRepository();
+
+  // bool appIsRunning = true;
+  // displayWelcomeText();
+  // while(appIsRunning) {
+  //   print('Write an option:');
+  //   final input = stdin.readLineSync().toLowerCase();
+
+  //   switch(input) {
+  //     case '1':
+  //       displayDBUsers(repository);
+  //       break;
+  //     case 'help':
+  //       displayAvailableOptions();
+  //       break;
+  //     case 'quit':
+  //       appIsRunning = false;
+  //       break;
+  //     case 'exit':
+  //       appIsRunning = false;
+  //       break;
+  //     default:
+  //       print('No supported option!');
+  //   }
+  // }
 }
 
 void displayDBUsers(Repository r) {
