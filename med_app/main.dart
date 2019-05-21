@@ -5,21 +5,15 @@ import './models/doctor.dart';
 import './models/person.dart';
 import 'dart:io';
 
-void main() {
+void main() async {
 
   print('Starting App');
-  var someFuture = Future.delayed(Duration(milliseconds: 3000), (){
-    print('3 Seconds Later!');
-    return 'Future resolved!';
-  });
+  var data = await fetchSomeData();
+  print(data);
 
-  someFuture.then((data) {
-    print(data);
-    print('1');
-    print('2');
-    print('End of application');
-  });
-
+  print('1');
+  print('2');
+  print('End of application');
 
   // final repository = initRepository();
 
@@ -47,6 +41,15 @@ void main() {
   //   }
   // }
 }
+
+Future fetchSomeData() {
+  return Future.delayed(Duration(milliseconds: 3000), (){
+    print('3 Seconds Later!');
+    return 'Future resolved!';
+  });
+}
+
+
 
 void displayDBUsers(Repository r) {
   final persons = r.items;
